@@ -1,15 +1,17 @@
 package net.wabl.menu;
 
+import javax.swing.text.html.Option;
+
 public class Food {
     int id;
     String name;
-    String description = "";
+    Option description;
     int emoji;
 
-    public Food(int id, String name, int emoji, String[] description){
+    public Food(int id, String name, int emoji, Option description){
         this.id = id;
         this.name = name;
-        this.description = description[0];
+        this.description = description;
         this.emoji = emoji;
     }
 }
