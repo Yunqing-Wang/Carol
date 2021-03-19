@@ -4,7 +4,10 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.wabl.main.Server;
 import net.wabl.main.Settings;
+import net.wabl.menu.Emoji;
 import net.wabl.menu.NewEmoji;
+
+import static net.wabl.main.Settings.GSON;
 
 public class EmojiListener extends ListenerAdapter {
     @Override
@@ -22,7 +25,8 @@ public class EmojiListener extends ListenerAdapter {
             String name = message[2];
             NewEmoji emoji = new NewEmoji(name);
             String response = Server.post("emojis", emoji);
-            e.getChannel().sendMessage(response).complete();
+            Emoji done = GSON.fromJson(response, Emoji.class);
+            e.getChannel().sendMessage(done.toString()).complete();
         } else if (message[1].equalsIgnoreCase("update")){
             e.getChannel().sendMessage("Unimplemented").complete();
         } else if (message[1].equalsIgnoreCase("remove")){
