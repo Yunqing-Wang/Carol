@@ -14,4 +14,9 @@ public class Food {
         this.description = description;
         this.emoji = emoji;
     }
+
+    @Override
+    public String toString(){
+        return "id: " + id + ", name: " + name + ", description: " + description + ", emoji: " + emoji;
+    }
 }

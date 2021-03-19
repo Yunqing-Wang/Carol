@@ -15,4 +15,9 @@ public class PlayerInventory {
         this.game = game;
         this.inventory = inventory;
     }
+
+    @Override
+    public String toString(){
+        return "id: " + id + ", player: " + player + ", game: " + game + ", inventory: " + inventory.toString();
+    }
 }

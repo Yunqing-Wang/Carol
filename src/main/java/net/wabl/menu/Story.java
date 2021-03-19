@@ -19,4 +19,9 @@ public class Story {
         this.recipes = recipes;
         this.story = story;
     }
+    @Override
+    public String toString(){
+        return "id: " + id + ",titel: " + titel + "description: " + description + ", items: " + items + ", recipes: "
+                + recipes + ", story: " + story;
+    }
 }

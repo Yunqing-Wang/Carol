@@ -15,4 +15,9 @@ public class Recipe {
         this.outcome = outcome;
         this.components = components;
     }
+
+    @Override
+    public String toString(){
+       return "id: " + id + ", operation: " + operation + ", outcome: " + outcome + ", components: " + components.toString();
+    }
 }

@@ -8,4 +8,9 @@ public class Player {
         this.id = id;
         this.discord_id = discord_id;
     }
+
+    @Override
+    public String toString(){
+        return "id: " + id + ", discord_id: " + discord_id;
+    }
 }
