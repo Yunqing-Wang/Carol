@@ -1,10 +1,11 @@
 package net.wabl.main;
+
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class Embed extends ListenerAdapter  {
-    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
+public class Embed extends ListenerAdapter {
+    public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String args = event.getMessage().getContentRaw();
         String title = "Pudding";
         String description = "If they have no bread to eat, why don't they just have some pudding?";
@@ -15,7 +16,7 @@ public class Embed extends ListenerAdapter  {
         String Inventar = "Inventar";
 
 
-        if(args.startsWith("test")){
+        if (args.startsWith("test")) {
             EmbedBuilder story = new EmbedBuilder();
 
             story.setTitle(title);
@@ -24,18 +25,14 @@ public class Embed extends ListenerAdapter  {
             story.addField(recipes, operations, false);
             story.setColor(0xffeb99);
 
+
             EmbedBuilder inventar = new EmbedBuilder();
             inventar.setTitle(Inventar);
             inventar.setColor(0xffeb99);
 
-            //if(event.getMessage().getContentRaw().startsWith("Inventar")) {
-                event.getChannel().sendMessage(story.build()).complete().addReaction().queue();
-            //}
-
-            event.getChannel().sendTyping().queue();
             event.getChannel().sendMessage(story.build()).queue();
-            event.getChannel().sendTyping().queue();
-            event.getChannel().sendMessage(inventar.build()).queue();
+            event.getChannel().sendMessage(inventar.build()).complete().addReaction("U+1F600").queue();
+
             story.clear();
             inventar.clear();
         }
