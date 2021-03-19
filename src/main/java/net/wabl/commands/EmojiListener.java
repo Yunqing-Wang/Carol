@@ -22,8 +22,12 @@ public class EmojiListener extends ListenerAdapter {
             if (message.length < 3 || message[2] == null) {
                 e.getChannel().sendMessage("No emoji name given").complete();
             }
+            if (message.length < 4 || message[3] == null) {
+                e.getChannel().sendMessage("No utf8 given").complete();
+            }
             String name = message[2];
-            NewEmoji emoji = new NewEmoji(name);
+            String utf8 = message[3];
+            NewEmoji emoji = new NewEmoji(name, utf8);
             String response = Server.post("emojis", emoji);
             Emoji done = GSON.fromJson(response, Emoji.class);
             e.getChannel().sendMessage(done.toString()).complete();
