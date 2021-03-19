@@ -11,7 +11,8 @@ repositories {
 }
 
 dependencies {
-    compile 'io.github.cdimascio:dotenv-java:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'io.github.cdimascio:dotenv-java:2.2.0'
     implementation 'net.dv8tion:JDA:4.2.0_241'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
