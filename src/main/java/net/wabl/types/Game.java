@@ -1,14 +1,14 @@
-package net.wabl.menu;
+package net.wabl.types;
 
 import java.util.UUID;
 import java.util.Vector;
 
 public class Game {
-    UUID id;
-    String channel_id;
-    Vector<Integer> players;
-    Vector<UUID> player_inventories;
-    Vector<Integer> inventory;
+    public UUID id;
+    public String channel_id;
+    public Vector<Integer> players;
+    public Vector<UUID> player_inventories;
+    public Vector<Integer> inventory;
 
     public Game(UUID id, String channel_id, Vector<Integer> players,
                 Vector<UUID> player_inventories, Vector<Integer> inventory){

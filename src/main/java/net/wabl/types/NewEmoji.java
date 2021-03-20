@@ -1,4 +1,4 @@
-package net.wabl.menu;
+package net.wabl.types;
 
 public class NewEmoji {
     String name;
