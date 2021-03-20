@@ -1,8 +1,8 @@
-package net.wabl.menu;
+package net.wabl.types;
 
 public class Player {
-    int id;
-    String discord_id;
+    public int id;
+    public String discord_id;
 
     public Player(int id, String discord_id){
         this.id = id;

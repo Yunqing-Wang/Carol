@@ -1,18 +1,16 @@
-package net.wabl.menu;
-
-import javax.swing.text.html.Option;
+package net.wabl.types;
 
 public class Food {
     int id;
     String name;
-    Option description;
     int emoji;
+    String description;
 
-    public Food(int id, String name, int emoji, Option description){
+    public Food(int id, String name, int emoji, String description){
         this.id = id;
         this.name = name;
-        this.description = description;
         this.emoji = emoji;
+        this.description = description;
     }
 
     @Override

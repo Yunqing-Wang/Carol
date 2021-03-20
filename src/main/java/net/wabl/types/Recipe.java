@@ -1,15 +1,14 @@
-package net.wabl.menu;
+package net.wabl.types;
 
 import java.util.List;
-import java.util.Vector;
 
 public class Recipe {
     int id;
     int operation;
     int outcome;
-    Vector<Integer> components;
+    List<Integer> components;
 
-    public Recipe(int id, int operation, int outcome, Vector<Integer> components){
+    public Recipe(int id, int operation, int outcome, List<Integer> components){
         this.id = id;
         this.operation = operation;
         this.outcome = outcome;
