@@ -20,5 +20,6 @@ public class Main {
         jda.addEventListener(new GameListener());
         jda.addEventListener(new FoodListener());
         jda.addEventListener(new RecipeListener());
+        jda.addEventListener(new Reactions());
     }
 }

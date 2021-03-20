@@ -4,6 +4,8 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.awt.*;
+
 public class TestListener extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String args = event.getMessage().getContentRaw();
@@ -30,8 +32,13 @@ public class TestListener extends ListenerAdapter {
             inventar.setTitle(Inventar);
             inventar.setColor(0xffeb99);
 
+            EmbedBuilder user = new EmbedBuilder();
+            user.setTitle("Player");
+            user.setColor(Color.PINK);
+
             event.getChannel().sendMessage(story.build()).queue();
             event.getChannel().sendMessage(inventar.build()).complete().addReaction("U+1F600").queue();
+            event.getChannel().sendMessage(user.build()).queue();
 
             story.clear();
             inventar.clear();
