@@ -12,7 +12,7 @@ import static net.wabl.main.Settings.GSON;
 public class FoodListener extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
-        String[] message = e.getMessage().getContentRaw().split("\\s");
+        String[] message = e.getMessage().getContentRaw().split("\"\\s\"");
 
         if(!message[0].equalsIgnoreCase(Settings.IDENT + "food")) {
             return;

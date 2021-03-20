@@ -1,12 +1,13 @@
 package net.wabl.types;
 
-import java.util.Vector;
+import java.util.List;
+
 
 public class NewGame {
     String channel_id;
-    Vector<Integer> inventory;
+    List<Integer> inventory;
 
-    public NewGame(String channel_id, Vector<Integer> inventory){
+    public NewGame(String channel_id, List<Integer> inventory){
         this.channel_id = channel_id;
         this.inventory = inventory;
     }
