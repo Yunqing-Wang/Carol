@@ -12,7 +12,7 @@ import static net.wabl.main.Settings.GSON;
 public class FoodListener extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
-        String[] message = e.getMessage().getContentRaw().split("\"\\s\"");
+        String[] message = e.getMessage().getContentRaw().split(";\\s");
 
         if(!message[0].equalsIgnoreCase(Settings.IDENT + "food")) {
             return;
@@ -57,7 +57,6 @@ public class FoodListener extends ListenerAdapter {
 
             String id = message[2];
             String response = Server.delete("foods/" + id);
-
             boolean done = GSON.fromJson(response, Boolean.class);
             if (done) {
                 e.getChannel().sendMessage("removed").complete();

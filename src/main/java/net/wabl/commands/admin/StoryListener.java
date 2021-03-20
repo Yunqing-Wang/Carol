@@ -4,7 +4,6 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.wabl.main.Server;
 import net.wabl.main.Settings;
-import net.wabl.types.Recipe;
 import net.wabl.types.Story;
 import net.wabl.types.NewStory;
 
@@ -17,7 +16,7 @@ import static net.wabl.main.Settings.GSON;
 public class StoryListener extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
-        String[] message = e.getMessage().getContentRaw().split("\"\\s\"");
+        String[] message = e.getMessage().getContentRaw().split(";\\s");
 
         if(!message[0].equalsIgnoreCase(Settings.IDENT + "story")) {
             return;
